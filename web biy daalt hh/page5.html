@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чингис хаан - Full Page Scroll</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+     font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header{
+    position: fixed;          
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    z-index:9999;
+}
+
+.logo{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a{
+    color:#e9e9e9;
+    text-decoration:none;
+    padding:25px 15px;
+    display:block;
+    transition:.3s;
+}
+
+.nav-links li a:hover{
+    color:#0073ff;
+    background:rgba(255,255,255,.1);
+}
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#212b38;
+    min-width:180px;
+    display:none;
+    list-style:none;
+}
+
+.dropdown li a{
+    padding:15px 20px;
+}
+
+.nav-links li:hover .dropdown{
+    display:block;
+}
+
+.scroll-container{
+    margin-top:70px;                     
+    height:calc(100vh - 70px);
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+}
+
+section{
+    height:calc(100vh - 70px);
+    scroll-snap-align:start;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(35%);
+    z-index:-1;
+}
+
+.content{
+    max-width:900px;
+    padding:40px;
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(2.5rem,8vw,5rem);
+    color:#d4af37;
+    letter-spacing:8px;
+}
+
+h2{
+    font-size:clamp(1.8rem,5vw,3rem);
+    color:#d4af37;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#f0f0f0;
+}
+
+.highlight{
+    border-bottom:2px solid #d4af37;
+}
+
+.arrow{
+    position:absolute;
+    bottom:30px;
+    font-size:2rem;
+    color:#d4af37;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+        <div class="logo">OTGOO WEB</div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="page1.html">Genghis khan</a></li>
+            <li>
+                <a href="#">CHINA &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="page2.html">Qin Shi Huang (秦始皇)</a></li>
+                    <li><a href="page3.html">Yu the Great (大禹)</a></li>
+                    <li><a href="page4.html">Wu Zetian (武则天)</a></li>
+                    <li><a href="page5.html">Kangxi Emperor (康熙帝)</a></li>
+                </ul>
+            </li>
+            <li><a href="page6.html">NAPOLEON</a></li>
+            <li><a href="page7.html">Alexander the Great</a></li>
+            <li><a href="page8.html">Julius Caesar</a></li>
+            <li><a href="page9.html">Cyrus the Great</a></li>
+        </ul>
+    </header>
+
+<div class="scroll-container">
+
+<section>
+    <div class="bg" style="background-image:url('chinahaan4.jpg')"></div>
+    <div class="content">
+        <p style="letter-spacing:5px;color:#d4af37;">1661–1722</p>
+        <h1>Kangxi Emperor (康熙帝)</h1>
+        <p><i>"Улс орныг засах үндэс нь өршөөл энэрэл юм. Ард олны сэтгэлийг олбол улс орон аяндаа засагдана."</i></p>
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('emp1.jpg')"></div>
+    <div class="content">
+        <h2>Kangxi Emperor (康熙帝) намтар</h2>
+        <p>Манж Чин улсын түүхэн дэх хамгийн аугаа хаадын нэг, Хятадын түүхэнд хамгийн удаан буюу 61 жил (1661–1722) төр барьсан хаан юм.</p>
+        <p>Бага нас ба Хаан ширээнд суусан нь
+Төрсөн нэр: Айсингиоро Сюанье (Xuanye).
+
+Хаан ширээнд суусан нь: Тэрээр 1654 онд төрж, 1661 онд эцэг Эеэр засагч (Shunzhi) хааныг нас барсны дараа ердөө 7 настайдаа хаан ширээнд суужээ.
+
+Төр барих эхэн үе: Бага залуу байхад нь Обой (Oboi) тэргүүтэй дөрвөн төр баригч сайд улс орныг удирдаж байсан ч 15 настайдаа тэрээр Обойг зайлуулж,
+ төрийн эрхийг өөрийн гарт авсан юм.</p>
+
+    <p>Энх-Амгалан хаан 1722 онд 68 насандаа таалал төгсжээ. Түүнийг дөрөвдүгээр хүү болох Найралт Төв хаан (Yongzheng) залгамжилсан юм. 
+        Түүний хаанчлал нь Чин гүрнийг дэлхийн хамгийн хүчирхэг гүрнүүдийн нэг болгох суурийг тавьсан билээ</p>
+        <p>Тэрээр өөрийн биеэр зургаан удаа Хятадын өмнөд мужуудаар аялж, 
+            ард иргэдийнхээ аж амьдралтай танилцдаг байсан нь "Өмнөд зүгт зорчсон нь" хэмээх алдартай судар, зургуудад мөнхрөн үлджээ.</p>
+</div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('emp2.jpg')"></div>
+    <div class="content">
+        <h2>Түүхэн гавьяа ба Амжилтууд</h2>
+        <p>Улс төр, цэргийн гавьяа (Нэгтгэн захирагч)
+Энх-Амгалан хаан засаглалынхаа хугацаанд дотоодын бослого болон гадаадын халдлагыг амжилттай дарж, газар нутгаа хамгийн ихээр тэлсэн:
+
+Гурван вангийн бослогыг дарсан (1673–1681): Хятадын өмнөд хэсгийг хянаж байсан хүчирхэг гурван ноёны бослогыг найман жилийн турш тэмцэж дарсанаар улс орноо бүрэн нэгтгэсэн.
+
+Тайванийг нэгтгэсэн (1683): Мин улсын талыг баримтлагч Жөн Чэнгуны гэр бүлийн хяналтад байсан Тайвань арлыг эзлэн авч, Хятадын засаг захиргаанд оруулсан.
+
+Зүүнгарын Галдан бошогттой хийсэн дайн: Тэрээр Халх Монголыг Зүүнгарын Галдан бошогтын довтолгооноос хамгаалах нэрээр өөртөө нэгтгэж 
+(Долоннуурын чуулган), улмаар Галдан хааныг ялснаар Төв Ази дахь нөлөөгөө эрс нэмэгдүүлсэн..</p>
+
+ <p>Нерчийн гэрээ (1689): Хаант Оростой хил тогтоох хэлэлцээр хийж, Амар мөрөн орчмын хилийг албан ёсоор баталгаажуулсан. Энэ нь Хятадын түүхэнд барууны гүрнүүдтэй тэгш эрхтэйгээр байгуулсан анхны олон улсын гэрээ гэж тооцогддог.
+
+ Төвөдөд гарсан үймээнийг дарж, Далай ламын институтыг өөрийн хамгаалалтад авснаар шашин болон улс төрийн холбоог бэхжүүлсэн.</p>
+<p>Тэрээр "Хүн амын тоо нэмэгдсэн ч татварыг нэмэхгүй" гэсэн алдарт бодлогоо (1712 онд) хэрэгжүүлсэн. Энэ нь ард иргэдийн амьдралыг тогтворжуулж, хүн амын өсөлтийг дэмжсэн.
+
+ Шар мөрний үерийг тогтоох далан барих, их сувгийг засах ажилд асар их хөрөнгө, хүч зарцуулж, худалдаа арилжааг хөгжүүлсэн.</p>
+</div>
+</section>
+
+</div>
+
+</body>
+</html>

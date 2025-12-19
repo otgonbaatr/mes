@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чингис хаан - Full Page Scroll</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header{
+    position: fixed;          
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    z-index:9999;
+}
+
+.logo{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a{
+    color:#e9e9e9;
+    text-decoration:none;
+    padding:25px 15px;
+    display:block;
+    transition:.3s;
+}
+
+.nav-links li a:hover{
+    color:#0073ff;
+    background:rgba(255,255,255,.1);
+}
+
+
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#212b38;
+    min-width:180px;
+    display:none;
+    list-style:none;
+}
+
+.dropdown li a{
+    padding:15px 20px;
+}
+
+.nav-links li:hover .dropdown{
+    display:block;
+}
+
+
+.scroll-container{
+    margin-top:70px;                     
+    height:calc(100vh - 70px);
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+}
+
+section{
+    height:calc(100vh - 70px);
+    scroll-snap-align:start;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+
+.bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(35%);
+    z-index:-1;
+}
+
+.content{
+    max-width:900px;
+    padding:40px;
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(2.5rem,8vw,5rem);
+    color:#d4af37;
+    letter-spacing:8px;
+}
+
+h2{
+    font-size:clamp(1.8rem,5vw,3rem);
+    color:#d4af37;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#f0f0f0;
+}
+
+.highlight{
+    border-bottom:2px solid #d4af37;
+}
+
+.arrow{
+    position:absolute;
+    bottom:30px;
+    font-size:2rem;
+    color:#d4af37;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+        <div class="logo">OTGOO WEB</div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="page1.html">Genghis khan</a></li>
+            <li>
+                <a href="#">CHINA &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="page2.html">Qin Shi Huang (秦始皇)</a></li>
+                    <li><a href="page3.html">Yu the Great (大禹)</a></li>
+                    <li><a href="page4.html">Wu Zetian (武则天)</a></li>
+                    <li><a href="page5.html">Kangxi Emperor (康熙帝)</a></li>
+                </ul>
+            </li>
+            <li><a href="page6.html">NAPOLEON</a></li>
+            <li><a href="page7.html">Alexander the Great</a></li>
+            <li><a href="page8.html">Julius Caesar</a></li>
+            <li><a href="page9.html">Cyrus the Great</a></li>
+        </ul>
+    </header>
+
+<div class="scroll-container">
+
+<section>
+    <div class="bg" style="background-image:url('genghis khan.jpg')"></div>
+    <div class="content">
+        <p style="letter-spacing:5px;color:#d4af37;">1162 – 1227</p>
+        <h1>Чингис хаан</h1>
+        <p><i>“Монгол улс бүхлээрээ дэлхийг эзэгнэнэ.”</i></p>
+        <p><i>"Бие баатар болбаас нэгэн үеийн баатар, сэтгэл баатар болбаас мянган үеийн баатар."</i></p>
+        <p><i>"Маргаашийн өөхнөөс өнөөдрийн уушиг дээр."</i></p>
+        <p><i>"Хэрэг явдал эхлэхээс өмнө гүнээ тунгаа, эхэлсэн бол эцсийг нь үз."</i></p>
+        <p><i>"Дайсан чамаас уучлал гуйвал тэр чиний дайсан биш, харин чиний боол болжээ гэсэн үг."</i></p>
+        <p><i>"Морин дээрээс дэлхийг эзлэх хялбар, мориноосоо бууж гүрнийг засах хэцүү."</i></p>
+        <p><i>"Би бурхны гэсгээл байна. Хэрэв та нар нүгэл үйлдээгүй бол бурхан над шиг ийм гэсгээлийг та нар руу илгээхгүй байсан юм."</i></p>
+        <p><i>"Олон нөхөдтэй болохоос бүү ай, олон дайсантай болохоос ай."</i></p>
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('wp6910797-genghis-khan-wallpapers.jpg')"></div>
+    <div class="content">
+        <h2>Чингис хааны намтар</h2>
+        <p>
+            Жинхэнэ нэр: Тэмүжин
+Төрсөн: 1162 он (зарим сурвалжид 1155/1167)
+Төрсөн газар: Онон голын хөвөө
+Эцэг: Есүхэй баатар
+Эх: Өүлэн эх
+Нас барсан: 1227 он
+        </p>
+        <p>Тэмүжин бага насандаа эцгээ алдаж, овог аймгаасаа хөөгдөн маш хүнд амьдралыг туулсан. Тэрээр тэсвэр хатуужил,
+             ухаан зоригийнхоо ачаар аажмаар нөлөө олж, анд Жамухатай нөхөрлөж байсан ч хожим өрсөлдөгч болсон.</p>
+    <p>1206 онд Тэмүжин Монголын овог аймгуудыг нэгтгэж, Их Хуралдай дээр “Чингис хаан” цол хүртэн Монголын эзэнт гүрнийг байгуулсан. Тэрээр цэрэг, захиргааны шинэ тогтолцоо бий болгож,
+         Яса хэмээх хууль цаазыг тогтоосон нь сахилга бат, шударга ёсыг чухалчилж байв.</p>
+    <p>Чингис хаан дорнын болон өрнийн олон улсыг байлдан дагуулж, Төв Ази, Хятад, Перс, Оросын хэсэг хүртэл тэлсэн асар том эзэнт гүрнийг байгуулсан. 
+        Түүний бодлогоор худалдаа, элч харилцаа хөгжиж, Торгоны зам идэвхжсэн.</p>
+    <p>1227 онд баруун зүгт хийсэн аян дайны үеэр нас барсан. Түүнийг нас барсны дараа хөвгүүд нь эзэнт гүрнийг залгамжилж, 
+        Монголын эзэнт гүрэн дэлхийн түүхэн дэх хамгийн том хуурай газрын эзэнт гүрэн болж өргөжив.</p>    
+    <p>Чингис хаан нь зөвхөн байлдан дагуулагч төдийгүй төрийн зүтгэлтэн, хууль тогтоогч,
+         нэгдмэл улс байгуулсан суут удирдагч хэмээн дэлхийд үнэлэгддэг.</p>
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('tsergss.jpg')"></div>
+    <div class="content">
+        <h2>Чингис хааны гавьяа</h2>
+        <p>Монголын овог аймгуудыг нэгтгэсэн
+Олон зуун жил бутарч байсан Монголын овог аймгуудыг нэг удирдлагад оруулж, нэгдсэн улс байгуулсан.</p>
+    <p>Монголын эзэнт гүрнийг байгуулсан
+Дэлхийн түүхэн дэх хамгийн том хуурай газрын эзэнт гүрэн-ийг үндэслэн байгуулсан</p>
+<p>Цэрэг, захиргааны шинэ тогтолцоо бий болгосон
+Арвантын систем (10, 100, 1000, 10000)-ийг нэвтрүүлж, чадвар дээр тулгуурласан удирдлагыг хэрэгжүүлсэн.</p>    
+<p>Яса хууль тогтоосон
+Шударга ёс, сахилга бат, хариуцлагыг чухалчилсан хууль цааз гаргаж, төрийн дэг журмыг бэхжүүлсэн.</p>
+<p>Худалдаа, харилцааг хөгжүүлсэн
+Торгоны замыг аюулгүй болгож, улс хоорондын худалдаа, соёлын солилцоог дэмжсэн.</p>
+<p>Шашин шүтэх эрх чөлөөг хүндэтгэсэн
+Янз бүрийн шашин, соёлыг хүлээн зөвшөөрч, харилцан хүндлэлийг баримталсан.</p>
+<p>Чадварлаг хүмүүсийг дэмжсэн
+Угсаа гарлаас үл хамааран авьяас чадвартай хүмүүсийг төр, цэрэгт дэвшүүлсэн.</p>
+<p>Дэлхийн түүхэнд нөлөөлсөн
+Дорнод, Өрнөдийг холбож, дэлхийн улс төр, эдийн засаг, соёлын хөгжилд гүн нөлөө үзүүлсэн.</p>
+</div>
+</section>
+
+</div>
+
+</body>
+</html>
