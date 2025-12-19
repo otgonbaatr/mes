@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чингис хаан - Full Page Scroll</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+     font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header{
+    position: fixed;      
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    z-index:9999;
+}
+
+.logo{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a{
+    color:#e9e9e9;
+    text-decoration:none;
+    padding:25px 15px;
+    display:block;
+    transition:.3s;
+}
+
+.nav-links li a:hover{
+    color:#0073ff;
+    background:rgba(255,255,255,.1);
+}
+
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#212b38;
+    min-width:180px;
+    display:none;
+    list-style:none;
+}
+
+.dropdown li a{
+    padding:15px 20px;
+}
+
+.nav-links li:hover .dropdown{
+    display:block;
+}
+
+
+.scroll-container{
+    margin-top:70px;                     
+    height:calc(100vh - 70px);
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+}
+
+section{
+    height:calc(100vh - 70px);
+    scroll-snap-align:start;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(35%);
+    z-index:-1;
+}
+
+.content{
+    max-width:900px;
+    padding:40px;
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(2.5rem,8vw,5rem);
+    color:#d4af37;
+    letter-spacing:8px;
+}
+
+h2{
+    font-size:clamp(1.8rem,5vw,3rem);
+    color:#d4af37;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#f0f0f0;
+}
+
+.highlight{
+    border-bottom:2px solid #d4af37;
+}
+
+.arrow{
+    position:absolute;
+    bottom:30px;
+    font-size:2rem;
+    color:#d4af37;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+        <div class="logo">OTGOO WEB</div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="page1.html">Genghis khan</a></li>
+            <li>
+                <a href="#">CHINA &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="page2.html">Qin Shi Huang (秦始皇)</a></li>
+                    <li><a href="page3.html">Yu the Great (大禹)</a></li>
+                    <li><a href="page4.html">Wu Zetian (武则天)</a></li>
+                    <li><a href="page5.html">Kangxi Emperor (康熙帝)</a></li>
+                </ul>
+            </li>
+            <li><a href="page6.html">NAPOLEON</a></li>
+            <li><a href="page7.html">Alexander the Great</a></li>
+            <li><a href="page8.html">Julius Caesar</a></li>
+            <li><a href="page9.html">Cyrus the Great</a></li>
+        </ul>
+    </header>
+
+<div class="scroll-container">
+
+<section>
+    <div class="bg" style="background-image:url('chinahaan2.jpg')"></div>
+    <div class="content">
+        <p style="letter-spacing:5px;color:#d4af37;">Ойролцоогоор М.Э.Ө 2123 он (Түүний амьдарч байсан хугацааг М.Э.Ө 2200 – 2100 оны хооронд гэж үздэг)</p>
+        <h1>Yu the Great (大禹)</h1>
+        <p><i>"Би үерийн аюулыг зогсоохын тулд есөн мөрнийг нээж, есөн нуурыг гүнзгийрүүлж, есөн мужийг нэгтгэв."</i></p>
+        
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('yuang1.jpg')"></div>
+    <div class="content">
+        <h2>Yu the Great (大禹) намтар</h2>
+        <p>Их Юү (Yu the Great / 大禹) нь Хятадын эртний түүх, домог зүйд Ся (Xia) гүрнийг үндэслэгч, үерийн аюулыг номхотгогч агуу баатар хэмээн мөнхөрсөн хүн юм. 
+            Тэрээр эртний Хятадын "Гурван хаан, таван дээдэс"-ийн үеийн хамгийн нэр хүндтэй удирдагчдын нэг билээ</p>
+            <p>Үерийн аюул ба Түүний тэмцэл
+Эртний Хятадын нутагт Шар мөрөн (Хатан гол) дагуулж байсан аймшигт үерийн аюул ард түмнийг туйлдуулж байв. Юүгийн эцэг Гүн (Gun) үерийг зогсоохын тулд далан барьж үзсэн боловч 9 жилийн дараа бүтэлгүйтэж, шийтгүүлсэн байдаг.
+
+Юү эцгийнхээ ажлыг үргэлжлүүлж, тэс өөр арга барил хэрэглэсэн:
+
+Арга барил: Тэрээр үерийг хаахын оронд суваг шуудуу татаж, усыг далай руу урсгах арга замыг сонгосон.
+
+Хичээл зүтгэл: Домогт өгүүлснээр, Юү үерийн эсрэг 13 жилийн турш тэмцэхдээ өөрийн гэрийн хаалгаар 3 удаа гарсан боловч ард түмнийхээ төлөө амсхийлгүй ажиллаж, гэртээ ороогүй гэдэг.</p>
+<p></p>
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('yung2.jpg')"></div>
+    <div class="content">
+        <h2>Түүхэн гавьяа ба Амжилтууд</h2>
+        
+<p>Их Юү (Yu the Great) хааны байгуулсан гол гавьяа, амжилтуудыг багцлан дүгнэвэл:
+
+1. Үерийн аюулыг номхотгосон нь (Хамгийн гол гавьяа)
+Тэрээр Шар мөрний аюулт үерийг зогсоохын тулд 13 жилийн турш цуцалтгүй ажилласан. Түүний эцэг Гүн далан барьж усыг хаах гэж оролдоод бүтэлгүйтсэн бол, Юү "Усыг хаах биш, урсгах" аргыг хэрэглэсэн юм.
+ Голын ёроолыг гүнзгийрүүлж, уулсыг сэтлэн суваг татаж, үерийн усыг далай руу чиглүүлсэн.
+Энэ хугацаанд тэрээр өөрийн гэрийн үүдээр гурван удаа өнгөрсөн ч, ард түмнийхээ төлөө нэг ч удаа оролгүй зүтгэсээр байсан гэдэг.</p>
+<p>Ся (Xia) гүрнийг үндэслэн байгуулсан нь
+М.Э.Ө 2070 онд Хятадын түүхэн дэх анхны төрт улс болох Ся гүрнийг байгуулсан.
+ Юүгээс өмнө хаан ширээг хамгийн чадвартай хүндээ шилжүүлдэг (Ариун залгамжлал) байсан бол, 
+Юүгийн хүү Ци хаан ширээг залгамжилснаар Хятадад 4000 жил үргэлжилсэн "Удам залгамжлах хаант засаглал" тогтсон юм.</p>
+<p>Есөн мужийг тогтоосон нь (Засаг захиргааны шинэчлэл)
+Тэрээр Хятадын газар нутгийг судлан, газар зүйн байршил болон хөрсний үржил шимээр нь "Есөн муж" (Jiu Zhou) болгон хуваасан.
+ Муж бүрийн онцлогт тохирсон татварыг (үр тариа, торго, загас г.м) тогтоож, эдийн засгийн анхны зохион байгуулалтыг хийсэн.
+ Энэ нь Хятад улс нэгдмэл газар нутагтай гэх ойлголтыг анх бий болгожээ.</p>
+<p>Есөн хүрэл тогоо (Jiuding)
+Домогт өгүүлснээр Юү хаан есөн мужаас хүрэл цуглуулж, Есөн хүрэл тогоо цутгуулсан байдаг.
+ Эдгээр тогоонууд нь Тэнгэрээс заяасан хааны эрх мэдэл болон улсын нэгдмэл байдлын бэлгэдэл болж, дараа дараагийн гүрнүүдийн үед төрийн гол шүтээн болсон</p>
+
+</div>
+</section>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чингис хаан - Full Page Scroll</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+     font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.header{
+    position: fixed;          
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:rgba(0,0,0,0.9);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    z-index:9999;
+}
+
+.logo{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+.nav-links li a{
+    color:#e9e9e9;
+    text-decoration:none;
+    padding:25px 15px;
+    display:block;
+    transition:.3s;
+}
+
+.nav-links li a:hover{
+    color:#0073ff;
+    background:rgba(255,255,255,.1);
+}
+.dropdown{
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#212b38;
+    min-width:180px;
+    display:none;
+    list-style:none;
+}
+
+.dropdown li a{
+    padding:15px 20px;
+}
+
+.nav-links li:hover .dropdown{
+    display:block;
+}
+
+.scroll-container{
+    margin-top:70px;                    
+    height:calc(100vh - 70px);
+    overflow-y:scroll;
+    scroll-snap-type:y mandatory;
+    scroll-behavior:smooth;
+}
+
+section{
+    height:calc(100vh - 70px);
+    scroll-snap-align:start;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(35%);
+    z-index:-1;
+}
+
+.content{
+    max-width:900px;
+    padding:40px;
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(2.5rem,8vw,5rem);
+    color:#d4af37;
+    letter-spacing:8px;
+}
+
+h2{
+    font-size:clamp(1.8rem,5vw,3rem);
+    color:#d4af37;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:#f0f0f0;
+}
+
+.highlight{
+    border-bottom:2px solid #d4af37;
+}
+
+.arrow{
+    position:absolute;
+    bottom:30px;
+    font-size:2rem;
+    color:#d4af37;
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+        <div class="logo">OTGOO WEB</div>
+        <ul class="nav-links">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="page1.html">Genghis khan</a></li>
+            <li>
+                <a href="#">CHINA &#9662;</a>
+                <ul class="dropdown">
+                    <li><a href="page2.html">Qin Shi Huang (秦始皇)</a></li>
+                    <li><a href="page3.html">Yu the Great (大禹)</a></li>
+                    <li><a href="page4.html">Wu Zetian (武则天)</a></li>
+                    <li><a href="page5.html">Kangxi Emperor (康熙帝)</a></li>
+                </ul>
+            </li>
+            <li><a href="page6.html">NAPOLEON</a></li>
+            <li><a href="page7.html">Alexander the Great</a></li>
+            <li><a href="page8.html">Julius Caesar</a></li>
+            <li><a href="page9.html">Cyrus the Great</a></li>
+        </ul>
+    </header>
+
+<div class="scroll-container">
+
+<section>
+    <div class="bg" style="background-image:url('chinahaan3.jpg')"></div>
+    <div class="content">
+        <p style="letter-spacing:5px;color:#d4af37;">М.Э. 624 – 705</p>
+        <h1> Wu Zetian (武则天)</h1>
+        <p><i>"Дэлхий ертөнц амар амгалан байхын тулд эрэгтэй, эмэгтэй аль нь ч захирч болно. Хамгийн гол нь ард түмнийг хайрлах сэтгэл юм."</i></p>
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('we1.jpg')"></div>
+    <div class="content">
+        <h2> Wu Zetian (武则天) намтар</h2>
+       <p>Ву Зэтянь (М.Э. 624 – 705) бол Хятадын 3000 гаруй жилийн түүхэн дэх цорын ганц албан ёсны эмэгтэй эзэн хаан юм. 
+        Түүний амьдрал бол ердийн нэг татвар эмээс дэлхийн хамгийн хүчирхэг гүрний хэмжээгүй эрхт хатан хаан болж чадсан гайхалтай түүх билээ.</p>
+        <p>Төрийн эрхэнд гарсан замнал
+Ву Зэтянь баян чинээлэг түшмэлийн гэр бүлд төрж, багаасаа бичиг үсэг, гүн ухаан, хөгжимд суралцжээ.
+
+Татвар эм: 14 настайдаа Тан улсын Тайзун хааны ордонд татвар эм болон оржээ.
+
+Хатан: Тайзун хааныг нас барсны дараа түүний хүү Гаозун хаан Ву-д дурлаж, түүнийг хийдээс эргүүлэн авчирч, улмаар их хатан (Huanghou) болгосон байна.
+
+Эрх мэдэл: Гаозун хаан сул дорой, өвчтэй байсан тул Ву Зэтянь төрийн хэргийг хөшигний ардаас удирдах болжээ.</p>
+<p>"Жоу" гүрнийг тунхагласан нь
+М.Э. 690 онд тэрээр өөрийн хүүхдүүдийг суудлаас нь зайлуулж, өөрийгөө "Ариун ба бурханлаг эзэн хаан" (Huangdi) хэмээн зарласан. Тэрээр Тан гүрний нэрийг сольж, өөрийн Жоу (Zhou) гүрнийг байгуулжээ.</p>
+
+    </div>
+    <div class="arrow">↓</div>
+</section>
+
+<section>
+    <div class="bg" style="background-image:url('we2.jpg')"></div>
+    <div class="content">
+        <h2>Түүхэн гавьяа ба Амжилтууд</h2>
+        <p>
+Ву Зэтянийг түүхчид харгис дарангуйлагч гэж шүүмжилдэг ч түүний засаглалын үед Хятад улс асар их цэцэглэн хөгжсөн:
+
+Төрийн шалгалт (Keju): Тэрээр язгууртны гарал үүслээс илүүтэйгээр эрдэм мэдлэгт суурилсан төрийн шалгалтыг дэмжиж, чадварлаг хүмүүсийг төрд ажиллуулсан.
+
+Эдийн засаг: Газар тариаланг дэмжиж, татварыг бууруулснаар ард түмний амьдрал эрс сайжирсан.
+
+Тэлэлт: Төв Ази руу улсынхаа хил хязгаарыг тэлж, Хятадын нөлөөг бэхжүүлсэн.
+
+Эмэгтэйчүүдийн эрх: Тэрээр эмэгтэйчүүдийн нийгэмд эзлэх байр суурийг дээшлүүлж, эх нь нас барахад эцгийнхтэй адил хугацаагаар гашуудах хууль гаргажээ.</p>
+</div>
+</section>
+
+</div>
+
+</body>
+</html>
